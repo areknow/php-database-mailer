@@ -12,7 +12,7 @@ $results = mysql_query("SELECT * FROM summit2015test");
 while($row = mysql_fetch_array($results)) {
 	
 	
-//	if ($row['mailed']==0) {
+	if ($row['mailed']==0) {
 		$userid = $row['id'];
 		$title = $row['title'];
 		$first = $row['first'];
@@ -55,7 +55,6 @@ while($row = mysql_fetch_array($results)) {
 			</html>';
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-//		$headers .= "To: $to" . "\r\n";
 		$headers .= 'From: CyberOU <cyberou@gmail.com>' . "\r\n";
 		mail($to, $subject, $message, $headers);
 		
@@ -68,7 +67,7 @@ while($row = mysql_fetch_array($results)) {
 		$counter = $counter+1;
 		echo "log: email succesfully sent, and 'mailed' value updated<br><br>";
 		
-//	}
+	}
 
 }
 echo "<p>log: $counter mail sent</p>";
