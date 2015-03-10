@@ -1,5 +1,4 @@
 <?php
-echo "<p></p>";
 $connect = mysql_connect("localhost","root","root");
 
 if (!$connect) {
